@@ -28,13 +28,30 @@ body.stopScrolling{
     margin: 0;
     box-sizing: border-box;
 }
+body.open .overlay{
+    opacity: 1;
+    pointer-events: auto;
+}
+.overlay{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 9;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events:none;
+}
+
 /* Navbar Style*/
 header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    
+    z-index: 10;
 }
 .container{
     position: relative;
@@ -42,19 +59,17 @@ header{
     max-width: 75rem;
     padding: 0 1.5rem;
     margin: 0 auto;
-    
-}
-
-nav.container{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
     padding: 0 1.5rem;
+    
+    
 }
 
 header .logo{
     width: 40%;
+    height: 10%;
     font-size: 1.5rem;
     font-family:'Times New Roman', Times, serif;
     color: var(--text-color);
@@ -66,24 +81,16 @@ header .logo{
     box-shadow: 3px 4px 21px -7px rgba(66, 68, 90, 1);
 
 }
-.links {
-    position: absolute;
+.links{
     width: 100%;
-    top: 0;
-    left: 0;
-    flex: 1;
-    order: 3;
     flex-basis: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem 0 2rem;
     opacity: 0;
     transition: 0.3s;
     background-color: var(--main-color-1);
-    
-    transition: 0.5s;
-    
+    z-index: -1;
 }
 .links ul{
     display: flex;
@@ -92,20 +99,24 @@ header .logo{
     width: 100%;
     list-style: none;
     padding-top: 1.5rem;
-
 }
 .links ul li{
     padding: 1.5rem;
+    z-index: -1;
 }
 .links ul a{
     font-size: 1.7rem;
     text-decoration: none;
     color: var(--text-color2);
+   
 }
 
 body.open .links{
     opacity: 1;
-    
+}
+
+body.open .links ul li{
+    z-index: 1;
 }
 
 .hamburger{
@@ -120,8 +131,8 @@ body.open .links{
 }
 .hamburger .bar{
     width: 100%;
-    height: 2px;
-    background-color: var(--main-color-5);
+    height: 3px;
+    background-color: var(--main-color-4);
     border-radius: 3px;
     position: absolute;
 }
@@ -146,8 +157,58 @@ body.open .hamburger .bar:last-child{
     transition: bottom 0.2s, transform 0.3s 0.1s;
 }
 
-/* Navbar Style*/
-main img{
+
+/* Main Style*/
+main .view-show{
+    position: relative;
     width: 100%;
+    height: 600px;
+    overflow: hidden;
 }
-  
+.view-show .container{
+    position: absolute;
+    top: 30%;
+    left: 0px;
+    justify-content: center;
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+    justify-items:center ;
+    width: 80%;
+    background-color: antiquewhite;
+    padding: 5px;
+    border: solid var(--main-color-4) 2px;
+    border-radius: 25px;
+}
+.search input{
+    display: inline-block;
+    width: 80%;
+    height: 2.5rem;
+    border: none;
+    border: solid black 1px;
+    border-radius: 25px;
+}
+.search .button-search{
+    height: 2.5rem;
+    border-radius: 25px;
+
+}
+.search input::placeholder{
+    text-align: center;
+}
+.search i{
+    margin-right: 1rem;
+    font-size: 1.9rem;
+    border-radius: 50%;
+    color: var(--main-color-3);
+    text-decoration: none;
+}
+
+.claster-nav{
+    display: flex;
+    
+}
+.squer{
+
+}
