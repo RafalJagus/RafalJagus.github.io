@@ -14,10 +14,6 @@
     
 }
 
-body{
-    height: 150vh;
-
-}
 body.stopScrolling{
     height: 100%;
     overflow: hidden;
@@ -91,6 +87,7 @@ header .logo{
     transition: 0.3s;
     background-color: var(--main-color-1);
     z-index: -1;
+    transition: 0.4s;
 }
 .links ul{
     display: flex;
@@ -113,10 +110,6 @@ header .logo{
 
 body.open .links{
     opacity: 1;
-}
-
-body.open .links ul li{
-    z-index: 1;
 }
 
 .hamburger{
@@ -159,11 +152,15 @@ body.open .hamburger .bar:last-child{
 
 
 /* Main Style*/
+main img{
+    height: 120%;
+}
 main .view-show{
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 100vh;
     overflow: hidden;
+    
 }
 .view-show .container{
     position: absolute;
@@ -180,6 +177,11 @@ main .view-show{
     padding: 5px;
     border: solid var(--main-color-4) 2px;
     border-radius: 25px;
+    z-index: 11;
+    transition: 0.4s;
+}
+body.open .search{
+    z-index: 0;
 }
 .search input{
     display: inline-block;
@@ -188,6 +190,7 @@ main .view-show{
     border: none;
     border: solid black 1px;
     border-radius: 25px;
+
 }
 .search .button-search{
     height: 2.5rem;
@@ -202,13 +205,55 @@ main .view-show{
     font-size: 1.9rem;
     border-radius: 50%;
     color: var(--main-color-3);
+    box-shadow: 3px 4px 21px -7px rgba(66, 68, 90, 1);
     text-decoration: none;
 }
-
-.claster-nav{
+.news{
     display: flex;
-    
+    align-items: center;
+    align-content: center;
+    margin-top: 25px;
+    width:100%;
+    height: 30%;
+}
+.news .images-news{
+    overflow: hidden;
+    display: block;
+    cursor: pointer;
+    border-radius: 15px;
+}
+.images-news img{
+    width: 105%;
+}
+.news .img-btn{
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.claster-container{
+    display: grid;
+    grid-template-columns: 90px 90px 90px;
+    grid-template-rows: 90px 90px;
+    row-gap: 100px;
+    column-gap: 2.5rem;
+    margin-top: 2.5rem;
 }
 .squer{
+    background-color: var(--main-color-2) ;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s transform;
+    border-radius: 25px;
+    box-shadow: 3px 4px 21px -7px rgba(66, 68, 90, 1);
+}
 
+.squer a{
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
 }
